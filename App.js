@@ -1,25 +1,18 @@
 import React,{useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen'
-import {View, Text} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-// import axios from "axios"
-
-function HomeScreen() {
-    return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Home!</Text>
-        </View>
-    );
-}
+import HomeScreen from './screens/Home';
 
 const Tab = createBottomTabNavigator();
 
 const App = () => {
 
     useEffect(() => {
-        SplashScreen.hide();
+        setTimeout(() =>{
+            SplashScreen.hide();
+        },800)
     });
 
     return (
@@ -37,6 +30,10 @@ const App = () => {
                 tabBarOptions={{
                     activeTintColor: '#FF8C00',
                     inactiveTintColor: '#707070',
+                    activeBackgroundColor:"#F8F8F8",
+                    labelStyle: {
+                        paddingBottom: 5,
+                    },
                 }}
             >
                 <Tab.Screen name="Home" component={HomeScreen} />
