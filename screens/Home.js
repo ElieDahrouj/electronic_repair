@@ -18,43 +18,46 @@ const HomeScreen = () => {
     return (
         <View style={homeCss.homeView}>
             <Header/>
-            <View>
-                <Text style={homeCss.title}>Tutoriels populaires</Text>
-                <ScrollView style={homeCss.scrollViewCss}>
-                    {
-                        items.data.map((item) => (
-                            <View key = {item.id} style={[homeCss.viewEachTutorial, item.id %2 ? {backgroundColor:blackColor} : {backgroundColor: whiteSmoke}]}>
-                                <View>
-                                    <Image style={{width:200, height:200}} source={{uri:"https://api-electronic-repair.herokuapp.com/"+item.image}} />
-                                </View>
 
-                                <View>
-                                    <Text style={homeCss.h1}>{item.name}</Text>
-                                    <Text style={homeCss.author}> <Text style={homeCss.span}>Rédigé par :</Text> {item.author} chez {item.company}</Text>
-                                    <Text style={homeCss.author}> <Text style={homeCss.span}>Temps nécessaire :</Text> {item.necessary_time} </Text>
-                                    <View>
-                                        <Text>
-                                            <Text style={item.id %2 ? {color:whiteSmoke} : {color: blackColor}}>
-                                                { item.nb_favorite }
-                                            </Text>
+            <Text style={homeCss.title}>Tutoriels populaires</Text>
 
-                                            <Ionicons name="star" size={18} color={"#FFD428"} />
+            <ScrollView style={homeCss.scrollViewCss}>
+                {
+                    items.data.map((item) => (
+                        <View key = {item.id} style={[homeCss.viewEachTutorial, item.id %2 ? {backgroundColor:blackColor} : {backgroundColor: whiteSmoke}]}>
+
+                            <View style={homeCss.viewPicture}>
+                                <Image style={homeCss.picture} source={{uri:item.image}} />
+                            </View>
+
+                            <View style={homeCss.viewInformation}>
+                                <Text style={homeCss.h1}>{item.name}</Text>
+                                <Text style={homeCss.author}><Text style={homeCss.span}>Rédigé par :</Text> {item.author} chez {item.company}</Text>
+                                <Text style={homeCss.author}><Text style={homeCss.span}>Difficulté :</Text> {item.difficulty} </Text>
+                                <Text style={homeCss.author}><Text style={homeCss.span}>Temps nécessaire :</Text> {item.necessary_time} </Text>
+
+                                <View style={homeCss.viewMoreInformation}>
+                                    <Text>
+                                        <Text style={item.id %2 ? {color:whiteSmoke} : {color: blackColor}}>
+                                            { item.nb_favorite }
                                         </Text>
 
-                                        <Text>
-                                            <Text style={item.id %2 ? {color:whiteSmoke} : {color: blackColor}}>
-                                                { item.nb_completed_repair }
-                                            </Text>
+                                        <Ionicons name="star" size={18} color={"#FFD428"} />
+                                    </Text>
 
-                                            <Ionicons name="settings-sharp" size={18} color={"#7ED321"} />
+                                    <Text>
+                                        <Text style={item.id %2 ? {color:whiteSmoke} : {color: blackColor}}>
+                                            { item.nb_completed_repair }
                                         </Text>
-                                    </View>
+
+                                        <Ionicons name="settings-sharp" size={18} color={"#7ED321"} />
+                                    </Text>
                                 </View>
                             </View>
-                        ))
-                    }
-                </ScrollView>
-            </View>
+                        </View>
+                    ))
+                }
+            </ScrollView>
         </View>
     );
 };

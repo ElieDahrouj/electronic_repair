@@ -1,11 +1,12 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 
 const colorTextInput = "#FFC3A9"
 const colorIcon = "#BEC2CE"
 const mainColor = "#FF8C00"
 const secondaryColor = "#a1a6ac"
 const greenColor = "#7ED321"
+const colorGrayBorder = "#B8BBC6"
 export const blackColor = "#36383c"
 export const whiteSmoke = "#ffffff"
 
@@ -56,7 +57,26 @@ export const homeCss = StyleSheet.create({
     },
 
     viewEachTutorial:{
-        padding:8
+        padding:8,
+        flexDirection:"row",
+        justifyContent: "space-around",
+        alignItems:"center",
+    },
+
+    viewPicture:{
+        paddingRight:10
+    },
+
+    picture:{
+        width:130,
+        height:130,
+        borderRadius:6,
+        borderColor:colorGrayBorder,
+        borderWidth:1
+    },
+
+    viewInformation:{
+        width:Dimensions.get('window').width - 150
     },
 
     h1:{
@@ -65,10 +85,18 @@ export const homeCss = StyleSheet.create({
     },
 
     author:{
-        color:secondaryColor
+        color:secondaryColor,
+        marginTop:5
     },
 
     span:{
         fontWeight: "bold"
     },
+
+    viewMoreInformation:{
+        flexDirection:"row",
+        alignItems:'center',
+        justifyContent:'space-around',
+        marginTop:10
+    }
 });
