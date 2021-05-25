@@ -4,14 +4,17 @@ import {StyleSheet} from 'react-native';
 const colorTextInput = "#FFC3A9"
 const colorIcon = "#BEC2CE"
 const mainColor = "#FF8C00"
-const secondaryColor = "#E1E4E8"
+const secondaryColor = "#a1a6ac"
 const greenColor = "#7ED321"
+export const blackColor = "#36383c"
+export const whiteSmoke = "#ffffff"
 
 export const headerCss = StyleSheet.create({
     headerView: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding:8,
     },
 
     viewIconTextInput: {
@@ -37,19 +40,28 @@ export const headerCss = StyleSheet.create({
 
 export const homeCss = StyleSheet.create({
     homeView: {
-        padding:8
+        flex:1
     },
 
     title:{
         fontSize: 20,
         fontWeight: "bold",
-        marginTop: 10,
-        marginBottom:20
+        marginTop: 5,
+        marginBottom:10,
+        paddingHorizontal:8,
+    },
+
+    scrollViewCss:{
+        height:675
+    },
+
+    viewEachTutorial:{
+        padding:8
     },
 
     h1:{
         fontSize: 17,
-        color: mainColor
+        color: mainColor,
     },
 
     author:{
@@ -58,5 +70,5 @@ export const homeCss = StyleSheet.create({
 
     span:{
         fontWeight: "bold"
-    }
+    },
 });
