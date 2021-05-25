@@ -3,6 +3,9 @@ import {StyleSheet} from 'react-native';
 
 const colorTextInput = "#FFC3A9"
 const colorIcon = "#BEC2CE"
+const mainColor = "#FF8C00"
+const secondaryColor = "#E1E4E8"
+const greenColor = "#7ED321"
 
 export const headerCss = StyleSheet.create({
     headerView: {
@@ -40,6 +43,20 @@ export const homeCss = StyleSheet.create({
     title:{
         fontSize: 20,
         fontWeight: "bold",
-        paddingTop: 10
+        marginTop: 10,
+        marginBottom:20
+    },
+
+    h1:{
+        fontSize: 17,
+        color: mainColor
+    },
+
+    author:{
+        color:secondaryColor
+    },
+
+    span:{
+        fontWeight: "bold"
     }
 });
