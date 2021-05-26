@@ -10,6 +10,10 @@ const colorGrayBorder = "#B8BBC6"
 export const blackColor = "#36383c"
 export const whiteSmoke = "#ffffff"
 
+const borderRadiusSix = 6
+const widthCategory = 180
+const heightCategory= 180
+
 export const headerCss = StyleSheet.create({
     headerView: {
         flexDirection: 'row',
@@ -50,10 +54,6 @@ export const homeCss = StyleSheet.create({
         marginTop: 5,
         marginBottom:10,
         paddingHorizontal:8,
-    },
-
-    scrollViewCss:{
-        height:675
     },
 
     viewEachTutorial:{
@@ -100,3 +100,49 @@ export const homeCss = StyleSheet.create({
         marginTop:10
     }
 });
+
+export const categoryCss = StyleSheet.create({
+    categoryView:{
+        flex:1
+    },
+
+    picture:{
+        width:widthCategory,
+        height:heightCategory,
+        borderRadius:borderRadiusSix,
+        borderColor:colorGrayBorder,
+        borderWidth:1,
+    },
+
+    button:{
+        marginVertical:15,
+        borderRadius:borderRadiusSix
+    },
+
+    ViewBtn:{
+        position:'relative'
+    },
+
+    viewText:{
+        position:'absolute',
+        backgroundColor:'rgba(0,0,0,0.65)',
+        width:widthCategory,
+        height:heightCategory,
+        borderRadius:borderRadiusSix,
+        flexDirection:'column',
+        alignItems:'center',
+        justifyContent:'flex-end'
+    },
+
+    textCategory:{
+        textAlign:'center',
+        color:'whitesmoke',
+        marginBottom:10
+    },
+
+    textNumberAppliance:{
+        textAlign:'center',
+        marginBottom:5,
+        color: whiteSmoke,
+    }
+})

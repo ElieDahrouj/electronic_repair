@@ -21,7 +21,7 @@ const HomeScreen = () => {
 
             <Text style={homeCss.title}>Tutoriels populaires</Text>
 
-            <ScrollView style={homeCss.scrollViewCss}>
+            <ScrollView>
                 {
                     items.data.map((item) => (
                         <View key = {item.id} style={[homeCss.viewEachTutorial, item.id %2 ? {backgroundColor:blackColor} : {backgroundColor: whiteSmoke}]}>
