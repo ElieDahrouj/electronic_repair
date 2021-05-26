@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import {homeCss, blackColor, whiteSmoke} from '../assets/css/appStyle'
 import {useFetchGet} from '../components/UseFetch';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import LottieView from 'lottie-react-native';
 
 const HomeScreen = () => {
     const [items, loading ] = useFetchGet("https://api-electronic-repair.herokuapp.com/api/home")
@@ -11,7 +12,12 @@ const HomeScreen = () => {
 
     if (loading){
         return(
-            <View><Text>helol</Text></View>
+            <View style={{flex:1}}>
+                <Header/>
+                <Text style={homeCss.title}>Tutoriels populaires</Text>
+
+                <LottieView source={require('../assets/animation/lf30_editor_9jqe1ajf.json')} autoPlay loop />
+            </View>
         )
     }
 

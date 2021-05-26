@@ -3,6 +3,7 @@ import {Text, View, ScrollView, Image, TouchableHighlight} from 'react-native';
 import Header from '../components/Header';
 import {useFetchGet} from '../components/UseFetch';
 import {categoryCss, homeCss} from '../assets/css/appStyle';
+import LottieView from 'lottie-react-native';
 
 const CategoryScreen = () => {
     const [items, loading ] = useFetchGet("https://api-electronic-repair.herokuapp.com/api/category")
@@ -10,8 +11,13 @@ const CategoryScreen = () => {
 
     if (loading){
         return(
-            <View><Text>Chargement</Text></View>
-        )
+            <View style={{flex:1}}>
+                <Header/>
+                <Text style={homeCss.title}>Catégorie d'appareils électroniques</Text>
+
+                <LottieView source={require('../assets/animation/lf30_editor_9jqe1ajf.json')} autoPlay loop />
+            </View>
+        );
     }
 
     return (
@@ -19,7 +25,6 @@ const CategoryScreen = () => {
             <Header/>
 
             <Text style={homeCss.title}>Catégorie d'appareils électroniques</Text>
-
             <ScrollView>
                 <View style={{flexDirection:"row", flexWrap:'wrap', justifyContent:'space-around'}}>
                     {

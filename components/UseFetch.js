@@ -12,12 +12,14 @@ export const useFetchGet = (url) => {
             try {
                 await axios.get(url)
                     .then(response =>{
-                        if (response.status === 200){
-                            setState({
-                                items: response.data,
-                                loading:false
-                            })
-                        }
+                        setTimeout(() =>{
+                            if (response.status === 200){
+                                setState({
+                                    items: response.data,
+                                    loading:false
+                                })
+                            }
+                        }, 1500)
                     })
             }
             catch(error) {
