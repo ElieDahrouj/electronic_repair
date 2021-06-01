@@ -3,8 +3,13 @@ import SplashScreen from 'react-native-splash-screen'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/Entypo';
+
 import HomeScreen from './screens/Home';
 import CategoryScreen from './screens/Category'
+import EshopCategoryScreen from './screens/EshopCategory'
+import ShoppingCartScreen from './screens/ShoppingCart'
+
 
 const Tab = createBottomTabNavigator();
 
@@ -28,6 +33,14 @@ const App = () => {
                         else if (route.name === 'Category') {
                             iconName = "albums";
                         }
+                        else if (route.name === 'Shop') {
+                            iconName = "shop";
+                            return <Entypo name={iconName} size={size} color={color}/>;
+                        }
+                        else if (route.name === 'Basket') {
+                            iconName = "shopping-cart";
+                            return <Entypo name={iconName} size={size} color={color}/>;
+                        }
                         return <Ionicons name={iconName} size={size} color={color} />;
                     },
                 })}
@@ -42,6 +55,8 @@ const App = () => {
             >
                 <Tab.Screen name="Home" component={HomeScreen} />
                 <Tab.Screen name="Category" component={CategoryScreen} />
+                <Tab.Screen name="Shop" component={EshopCategoryScreen} />
+                <Tab.Screen name="Basket" component={ShoppingCartScreen} options={{ tabBarBadge: 0 }}  />
             </Tab.Navigator>
         </NavigationContainer>
     )

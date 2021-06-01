@@ -2,10 +2,8 @@ import React from 'react';
 import {Dimensions, StyleSheet} from 'react-native';
 
 const colorTextInput = "#FFC3A9"
-const colorIcon = "#BEC2CE"
 const mainColor = "#FF8C00"
 const secondaryColor = "#a1a6ac"
-const greenColor = "#7ED321"
 const colorGrayBorder = "#B8BBC6"
 export const blackColor = "#36383c"
 export const whiteSmoke = "#ffffff"
@@ -106,6 +104,12 @@ export const categoryCss = StyleSheet.create({
         flex:1
     },
 
+    scrollView:{
+        flexDirection:"row",
+        flexWrap:'wrap',
+        justifyContent:'space-around'
+    },
+
     picture:{
         width:widthCategory,
         height:heightCategory,
@@ -125,7 +129,7 @@ export const categoryCss = StyleSheet.create({
 
     viewText:{
         position:'absolute',
-        backgroundColor:'rgba(0,0,0,0.65)',
+        backgroundColor:'rgba(0,0,0,0.7)',
         width:widthCategory,
         height:heightCategory,
         borderRadius:borderRadiusSix,
@@ -144,5 +148,25 @@ export const categoryCss = StyleSheet.create({
         textAlign:'center',
         marginBottom:5,
         color: whiteSmoke,
+    }
+})
+
+export const shoppingCartCss = StyleSheet.create({
+    scrollViewCCC:{
+        flexDirection:"column",
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    firstTxt:{
+        marginVertical: 10,
+        fontSize:20,
+        color:blackColor
+    },
+    secondTxt:{
+        color:blackColor,
+        fontSize:15,
+    },
+    mb:{
+        marginTop:30
     }
 })
