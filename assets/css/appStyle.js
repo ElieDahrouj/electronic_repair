@@ -170,3 +170,99 @@ export const shoppingCartCss = StyleSheet.create({
         marginTop:30
     }
 })
+
+export const categoryIdCss = StyleSheet.create({
+    categoryIdView:{
+        flex:1
+    },
+
+    viewPicture:{
+      position:'relative'
+    },
+
+    picture:{
+        width: Dimensions.get('window').width,
+        height : 300,
+        resizeMode: 'cover'
+    },
+
+    viewText:{
+        position:'absolute',
+        width: Dimensions.get('window').width,
+        height : 300,
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:'rgba(0,0,0,0.6)',
+    },
+
+    textCategory:{
+        color:whiteSmoke,
+        fontSize:30,
+        textAlign:'center'
+    },
+
+    viewIcon:{
+        paddingHorizontal: 8,
+        paddingTop:8,
+        position:'absolute',
+        top:0,
+        left:0
+    },
+
+    viewAppliance:{
+        flexDirection:'row',
+        justifyContent:'space-around',
+        alignItems:'center',
+        marginHorizontal:8,
+        padding:5,
+        marginTop:35,
+        borderWidth:1,
+        borderColor:"#707070",
+        borderRadius:6
+    },
+
+    pictureAppliance:{
+        width : 150,
+        height:150,
+        resizeMode: 'contain'
+    },
+
+    viewTextAppliance:{
+        width: Dimensions.get('window').width - 190,
+    },
+
+    textTitle:{
+        fontWeight:'bold',
+        fontSize:18
+    },
+
+    textDescription:{
+        color:colorGrayBorder,
+    },
+
+    danger:{
+      color:'#d71528'
+    },
+
+    beCareful:{
+        color:'#ed7425'
+    },
+
+    warning:{
+        color:'#fcc816'
+    },
+
+    good:{
+        color:'#9dc318'
+    },
+
+    veryGood:{
+        color:'#139441'
+    },
+
+    my:{
+        marginVertical : 10
+    }
+})
+

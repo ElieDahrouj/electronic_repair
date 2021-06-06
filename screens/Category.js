@@ -5,7 +5,7 @@ import {useFetchGet} from '../components/UseFetch';
 import {categoryCss, homeCss} from '../assets/css/appStyle';
 import LottieView from 'lottie-react-native';
 
-const CategoryScreen = () => {
+const CategoryScreen = ({ navigation }) => {
     const [items, loading ] = useFetchGet("https://api-electronic-repair.herokuapp.com/api/category")
     console.log(items.data)
 
@@ -29,7 +29,11 @@ const CategoryScreen = () => {
                 <View style={categoryCss.scrollView}>
                     {
                         items.data.map((item) => (
-                            <TouchableHighlight activeOpacity={0.85} style={categoryCss.button} underlayColor="rgba(255,255,255,0.65)" key={item.id} onPress={() =>console.log("hello")}>
+                            <TouchableHighlight activeOpacity={0.85} style={categoryCss.button} underlayColor="rgba(255,255,255,0.65)" key={item.id} onPress={() => {
+                                navigation.navigate('Category_id', {
+                                    category_id: item.id,
+                                });
+                            }}>
                                 <View>
                                     <Image style={categoryCss.picture} source={{uri:item.picture}} />
 

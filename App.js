@@ -2,16 +2,33 @@ import React,{useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 
 import HomeScreen from './screens/Home';
 import CategoryScreen from './screens/Category'
+import CategoryIdScreen from './screens/Category_id'
 import EshopCategoryScreen from './screens/EshopCategory'
 import ShoppingCartScreen from './screens/ShoppingCart'
 
 
 const Tab = createBottomTabNavigator();
+const CategoryStack = createStackNavigator();
+
+function CategoryStackScreen() {
+    return (
+        <CategoryStack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}
+        >
+            <CategoryStack.Screen name="Category" component={CategoryScreen} />
+            <CategoryStack.Screen name="Category_id" component={CategoryIdScreen} />
+        </CategoryStack.Navigator>
+    );
+}
+
 
 const App = () => {
 
@@ -54,7 +71,7 @@ const App = () => {
                 }}
             >
                 <Tab.Screen name="Home" component={HomeScreen} />
-                <Tab.Screen name="Category" component={CategoryScreen} />
+                <Tab.Screen name="Category" component={CategoryStackScreen} />
                 <Tab.Screen name="Shop" component={EshopCategoryScreen} />
                 <Tab.Screen name="Basket" component={ShoppingCartScreen} options={{ tabBarBadge: 0 }}  />
             </Tab.Navigator>
