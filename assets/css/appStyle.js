@@ -277,3 +277,64 @@ export const eshopCategoryIdCss = StyleSheet.create({
         color:"#0C66FF"
     }
 })
+
+export const eshopIdCss = StyleSheet.create({
+    viewEshopId:{
+        position:'relative',
+    },
+
+    picture:{
+        width: Dimensions.get('window').width,
+        height : 300,
+        resizeMode: 'contain'
+    },
+
+    arrow:{
+        width:50,
+        paddingLeft: 8
+    },
+
+    title:{
+        width:Dimensions.get('window').width - 65,
+        paddingRight: 8
+    },
+
+    textTitle:{
+        fontSize:25,
+        textAlign:'center'
+    },
+
+    titleArrow:{
+        marginVertical:10,
+        flexDirection:'row',
+        alignItems:'center'
+    },
+
+    moreInfo:{
+        paddingHorizontal : 8,
+        marginTop: 15
+    },
+
+    price:{
+        color:"#0C66FF",
+        fontSize : 25,
+        marginVertical: 10
+    },
+
+    descriptionCss:{
+        fontSize: 18,
+        marginBottom:10
+    },
+
+    btnAdd:{
+        width:Dimensions.get('window').width,
+        backgroundColor:mainColor,
+        paddingVertical:17,
+    },
+
+    txtBtn:{
+        color:whiteSmoke,
+        textAlign:'center',
+        width:Dimensions.get('window').width,
+    }
+})

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
+import {Text, View, ScrollView, Image, TouchableOpacity, Button} from 'react-native';
 import {useFetchGetId} from '../components/UseFetch';
 import {categoryIdCss,eshopCategoryIdCss} from '../assets/css/appStyle';
 import LottieView from 'lottie-react-native';
@@ -38,20 +38,26 @@ const EshopCategoryId = ({ route, navigation }) => {
                     }
                     {
                         items.data[0].equipment.map((equipment) => (
-                            <View style={[categoryIdCss.viewAppliance]} key={equipment.id}>
-                                <View>
-                                    <Image style={categoryIdCss.pictureAppliance} source={{uri:equipment.picture}} />
-                                </View>
-                                <View style={categoryIdCss.viewTextAppliance}>
-                                    <Text style={categoryIdCss.textTitle}>{equipment.name}</Text>
-
-                                    <View style={categoryIdCss.my}>
-                                        <Text style={eshopCategoryIdCss.textPrice}>{equipment.price} €</Text>
+                            <TouchableOpacity key={equipment.id} onPress={() => {
+                                navigation.navigate('Eshop_id', {
+                                    eshop_id: equipment.id,
+                                })}}
+                            >
+                                <View style={[categoryIdCss.viewAppliance]}>
+                                    <View>
+                                        <Image style={categoryIdCss.pictureAppliance} source={{uri:equipment.picture}} />
                                     </View>
+                                    <View style={categoryIdCss.viewTextAppliance}>
+                                        <Text style={categoryIdCss.textTitle}>{equipment.name}</Text>
 
-                                    <Text style={categoryIdCss.textDescription} numberOfLines={3}>{equipment.description}</Text>
+                                        <View style={categoryIdCss.my}>
+                                            <Text style={eshopCategoryIdCss.textPrice}>{equipment.price} €</Text>
+                                        </View>
+
+                                        <Text style={categoryIdCss.textDescription} numberOfLines={3}>{equipment.description}</Text>
+                                    </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         ))
                     }
                 </View>

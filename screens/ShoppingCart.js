@@ -14,7 +14,7 @@ const ShoppingCartScreen = () => {
                     <Image source={emptyCart} />
                     <View style={shoppingCartCss.scrollViewCCC}>
                         <Text style={shoppingCartCss.firstTxt}>Votre panier est vide !</Text>
-                        <Text style={shoppingCartCss.secondTxt}>Allez-y, commandez des articles dans la boutique !</Text>
+                        <Text style={shoppingCartCss.secondTxt}>Commandez des articles dans la boutique !</Text>
                     </View>
                 </View>
             </ScrollView>

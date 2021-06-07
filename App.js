@@ -11,6 +11,7 @@ import CategoryScreen from './screens/Category'
 import CategoryIdScreen from './screens/Category_id'
 import EshopCategoryScreen from './screens/EshopCategory'
 import EshopCategoryIdScreen from './screens/EshopCategoryId'
+import EshopIdScreen from './screens/Eshop_id'
 import ShoppingCartScreen from './screens/ShoppingCart'
 
 
@@ -39,6 +40,7 @@ function EshopCategoryStackScreen() {
         >
             <Stack.Screen name="Shop" component={EshopCategoryScreen} />
             <Stack.Screen name="Eshop_category_id" component={EshopCategoryIdScreen} />
+            <Stack.Screen name="Eshop_id" component={EshopIdScreen} />
         </Stack.Navigator>
     );
 }
