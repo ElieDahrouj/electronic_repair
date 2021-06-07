@@ -176,6 +176,10 @@ export const categoryIdCss = StyleSheet.create({
         flex:1
     },
 
+    pb15:{
+        paddingBottom:15
+    },
+
     viewPicture:{
       position:'relative'
     },
@@ -216,7 +220,7 @@ export const categoryIdCss = StyleSheet.create({
         alignItems:'center',
         marginHorizontal:8,
         padding:5,
-        marginTop:35,
+        marginTop:27,
         borderWidth:1,
         borderColor:"#707070",
         borderRadius:6
@@ -261,8 +265,15 @@ export const categoryIdCss = StyleSheet.create({
         color:'#139441'
     },
 
-    my:{
+    my10:{
         marginVertical : 10
     }
 })
 
+export const eshopCategoryIdCss = StyleSheet.create({
+    textPrice: {
+        marginVertical:5,
+        fontSize:16,
+        color:"#0C66FF"
+    }
+})

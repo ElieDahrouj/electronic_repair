@@ -21,7 +21,7 @@ const CategoryIdScreen = ({ route, navigation }) => {
     return (
         <View style={categoryIdCss.categoryIdView}>
             <ScrollView>
-                <View>
+                <View style={categoryIdCss.pb15}>
                     {
                         items.data.map((item) => (
                             <View key={item.id} style={categoryIdCss.viewPicture}>
@@ -49,31 +49,31 @@ const CategoryIdScreen = ({ route, navigation }) => {
                                     <Text>
                                         {
                                             appliance.reparability_index <= 1.5 && appliance.reparability_index != null ?
-                                                <View style={categoryIdCss.my}><Text style={[categoryIdCss.danger,categoryIdCss.my]}>Réparabilité <FontAwesome name="wrench" size={15} color="#d71528" /> : {appliance.reparability_index} / 10</Text></View>
+                                                <View style={categoryIdCss.my10}><Text style={[categoryIdCss.danger]}>Réparabilité <FontAwesome name="wrench" size={15} color="#d71528" /> : {appliance.reparability_index} / 10</Text></View>
                                                 :
                                                 ""
                                         }
                                         {
                                             appliance.reparability_index > 1.5 && appliance.reparability_index <= 3 && appliance.reparability_index != null ?
-                                                <View style={categoryIdCss.my}><Text style={[categoryIdCss.beCareful]}>Réparabilité <FontAwesome name="wrench" size={15} color="#ed7425" /> : {appliance.reparability_index} / 10</Text></View>
+                                                <View style={categoryIdCss.my10}><Text style={[categoryIdCss.beCareful]}>Réparabilité <FontAwesome name="wrench" size={15} color="#ed7425" /> : {appliance.reparability_index} / 10</Text></View>
                                                 :
                                                 ""
                                         }
                                         {
                                             appliance.reparability_index > 3 && appliance.reparability_index <= 5.5 && appliance.reparability_index != null ?
-                                                <View style={categoryIdCss.my}><Text style={[categoryIdCss.warning,categoryIdCss.my]}>Réparabilité <FontAwesome name="wrench" size={15} color="#fcc816" /> : {appliance.reparability_index} / 10</Text></View>
+                                                <View style={categoryIdCss.my10}><Text style={[categoryIdCss.warning]}>Réparabilité <FontAwesome name="wrench" size={15} color="#fcc816" /> : {appliance.reparability_index} / 10</Text></View>
                                                 :
                                                 ""
                                         }
                                         {
                                             appliance.reparability_index > 5.5 && appliance.reparability_index <= 7 && appliance.reparability_index != null ?
-                                                <View style={categoryIdCss.my}><Text style={[categoryIdCss.good,categoryIdCss.my]}>Réparabilité <FontAwesome name="wrench" size={15} color="#9dc318" /> : {appliance.reparability_index} / 10</Text></View>
+                                                <View style={categoryIdCss.my10}><Text style={[categoryIdCss.good]}>Réparabilité <FontAwesome name="wrench" size={15} color="#9dc318" /> : {appliance.reparability_index} / 10</Text></View>
                                                 :
                                                 ""
                                         }
                                         {
                                             appliance.reparability_index > 7 && appliance.reparability_index <= 10 && appliance.reparability_index != null ?
-                                                <View style={categoryIdCss.my}><Text style={[categoryIdCss.veryGood,categoryIdCss.my]}>Réparabilité <FontAwesome name="wrench" size={15} color="#139441" /> : {appliance.reparability_index} / 10</Text></View>
+                                                <View style={categoryIdCss.my10}><Text style={[categoryIdCss.veryGood]}>Réparabilité <FontAwesome name="wrench" size={15} color="#139441" /> : {appliance.reparability_index} / 10</Text></View>
                                                 :
                                                 ""
                                         }
@@ -82,7 +82,6 @@ const CategoryIdScreen = ({ route, navigation }) => {
                                     <Text style={categoryIdCss.textDescription} numberOfLines={3}>{appliance.description}</Text>
                                 </View>
                             </View>
-
                         ))
                     }
                 </View>

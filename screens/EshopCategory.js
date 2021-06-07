@@ -5,7 +5,7 @@ import {useFetchGet} from '../components/UseFetch';
 import {categoryCss, homeCss} from '../assets/css/appStyle';
 import LottieView from 'lottie-react-native';
 
-const EshopCategoryScreen = () => {
+const EshopCategoryScreen = ({ navigation }) => {
     const [items, loading ] = useFetchGet("https://api-electronic-repair.herokuapp.com/api/eshop")
     console.log(items.data)
 
@@ -30,7 +30,11 @@ const EshopCategoryScreen = () => {
                 <View style={categoryCss.scrollView}>
                     {
                         items.data.map((item) => (
-                            <TouchableHighlight activeOpacity={0.85} style={categoryCss.button} underlayColor="rgba(255,255,255,0.65)" key={item.id} onPress={() =>console.log("hello")}>
+                            <TouchableHighlight activeOpacity={0.85} style={categoryCss.button} underlayColor="rgba(255,255,255,0.65)" key={item.id} onPress={() => {
+                                navigation.navigate('Eshop_category_id', {
+                                    eshopCategory_id: item.id,
+                                })
+                            }}>
                                 <View>
                                     <Image style={categoryCss.picture} source={{uri:item.picture}} />
 
