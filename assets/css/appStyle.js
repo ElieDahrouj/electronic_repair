@@ -211,7 +211,8 @@ export const categoryIdCss = StyleSheet.create({
         paddingTop:8,
         position:'absolute',
         top:0,
-        left:0
+        left:0,
+        zIndex:55
     },
 
     viewAppliance:{
@@ -351,5 +352,76 @@ export const eshopIdCss = StyleSheet.create({
         color:whiteSmoke,
         textAlign:'center',
         width:Dimensions.get('window').width,
+    }
+})
+
+export const applianceIdCss = StyleSheet.create({
+    viewAppliance:{
+        position:'relative',
+    },
+
+    infoView:{
+        paddingHorizontal: 8,
+        paddingTop:45,
+        position:'absolute',
+        top:0,
+        left:0,
+        width: Dimensions.get('window').width,
+        height : 300,
+        backgroundColor:'rgba(0,0,0,0.75)',
+    },
+
+    titleDescriptionView:{
+        position:'absolute',
+        bottom:0,
+        width: Dimensions.get('window').width,
+        marginBottom:48,
+        paddingHorizontal:8,
+    },
+
+    secondInfoView:{
+        position:'absolute',
+        bottom:0,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        borderTopWidth:1,
+        borderColor:"#707070",
+        paddingVertical:8,
+        width: Dimensions.get('window').width,
+    },
+
+    viewDoc:{
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
+        width: Dimensions.get('window').width/2,
+    },
+
+    br:{
+      borderRightWidth:1,
+      borderColor : "#707070"
+    },
+
+    title:{
+        color:whiteSmoke,
+        fontSize:20
+    },
+
+    descriptionAppliance:{
+        color:whiteSmoke,
+        fontSize:15
+    },
+
+    fs17:{
+        fontSize:17
+    },
+
+    ml3:{
+        marginLeft:3
+    },
+
+    colorDoc:{
+        color:whiteSmoke,
     }
 })

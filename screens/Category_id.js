@@ -21,70 +21,75 @@ const CategoryIdScreen = ({ route, navigation }) => {
     return (
         <View style={categoryIdCss.categoryIdView}>
             <ScrollView>
-                <View style={categoryIdCss.pb15}>
-                    {
-                        items.data.map((item) => (
-                            <View key={item.id} style={categoryIdCss.viewPicture}>
-                                <Image style={categoryIdCss.picture} source={{uri:item.picture}} />
-                                <View style={categoryIdCss.viewText}>
-                                    <Text style={categoryIdCss.textCategory}>{item.name}</Text>
-                                </View>
-                                <View style={categoryIdCss.viewIcon}>
-                                    <TouchableOpacity onPress={() => navigation.goBack()}>
-                                        <Ionicons name="arrow-back" size={30} color="#FF8C00" />
-                                    </TouchableOpacity>
-                                </View>
+                {
+                    items.data.map((item) => (
+                        <View key={item.id}>
+                            <Image style={categoryIdCss.picture} source={{uri:item.picture}} />
+                            <View style={categoryIdCss.viewText}>
+                                <Text style={categoryIdCss.textCategory}>{item.name}</Text>
                             </View>
-                        ))
-                    }
-                    {
-                        items.data[0].appliance.map((appliance) => (
-                            <View style={categoryIdCss.viewAppliance} key={appliance.id}>
-                                <View>
-                                    <Image style={categoryIdCss.pictureAppliance} source={{uri:appliance.picture}} />
-                                </View>
-                                <View style={categoryIdCss.viewTextAppliance}>
-                                    <Text style={categoryIdCss.textTitle}>{appliance.name}</Text>
+                            <View style={categoryIdCss.viewIcon}>
+                                <TouchableOpacity onPress={() => navigation.goBack()}>
+                                    <Ionicons name="arrow-back" size={30} color="#FF8C00" />
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    ))
+                }
+                {
+                    items.data[0].appliance.map((appliance) => (
+                        <TouchableOpacity style={categoryIdCss.viewAppliance} key={appliance.id} onPress={() => {
+                            navigation.navigate('Appliance_id', {
+                                appliance_id: appliance.id,
+                            })
+                        }}>
+                            <View>
+                                <Image style={categoryIdCss.pictureAppliance} source={{uri:appliance.picture}} />
+                            </View>
 
+                            <View style={categoryIdCss.viewTextAppliance}>
+                                <Text style={categoryIdCss.textTitle}>{appliance.name}</Text>
+
+                                <View style={categoryIdCss.my10}>
                                     <Text>
                                         {
                                             appliance.reparability_index <= 1.5 && appliance.reparability_index != null ?
-                                                <View style={categoryIdCss.my10}><Text style={[categoryIdCss.danger]}>Réparabilité <FontAwesome name="wrench" size={15} color="#d71528" /> : {appliance.reparability_index} / 10</Text></View>
+                                                <Text style={[categoryIdCss.danger]}>Réparabilité <FontAwesome name="wrench" size={15} color="#d71528" /> : {appliance.reparability_index} / 10</Text>
                                                 :
                                                 ""
                                         }
                                         {
                                             appliance.reparability_index > 1.5 && appliance.reparability_index <= 3 && appliance.reparability_index != null ?
-                                                <View style={categoryIdCss.my10}><Text style={[categoryIdCss.beCareful]}>Réparabilité <FontAwesome name="wrench" size={15} color="#ed7425" /> : {appliance.reparability_index} / 10</Text></View>
+                                                <Text style={[categoryIdCss.beCareful]}>Réparabilité <FontAwesome name="wrench" size={15} color="#ed7425" /> : {appliance.reparability_index} / 10</Text>
                                                 :
                                                 ""
                                         }
                                         {
                                             appliance.reparability_index > 3 && appliance.reparability_index <= 5.5 && appliance.reparability_index != null ?
-                                                <View style={categoryIdCss.my10}><Text style={[categoryIdCss.warning]}>Réparabilité <FontAwesome name="wrench" size={15} color="#fcc816" /> : {appliance.reparability_index} / 10</Text></View>
+                                                <Text style={[categoryIdCss.warning]}>Réparabilité <FontAwesome name="wrench" size={15} color="#fcc816" /> : {appliance.reparability_index} / 10</Text>
                                                 :
                                                 ""
                                         }
                                         {
                                             appliance.reparability_index > 5.5 && appliance.reparability_index <= 7 && appliance.reparability_index != null ?
-                                                <View style={categoryIdCss.my10}><Text style={[categoryIdCss.good]}>Réparabilité <FontAwesome name="wrench" size={15} color="#9dc318" /> : {appliance.reparability_index} / 10</Text></View>
+                                                <Text style={[categoryIdCss.good]}>Réparabilité <FontAwesome name="wrench" size={15} color="#9dc318" /> : {appliance.reparability_index} / 10</Text>
                                                 :
                                                 ""
                                         }
                                         {
                                             appliance.reparability_index > 7 && appliance.reparability_index <= 10 && appliance.reparability_index != null ?
-                                                <View style={categoryIdCss.my10}><Text style={[categoryIdCss.veryGood]}>Réparabilité <FontAwesome name="wrench" size={15} color="#139441" /> : {appliance.reparability_index} / 10</Text></View>
+                                                <Text style={[categoryIdCss.veryGood]}>Réparabilité <FontAwesome name="wrench" size={15} color="#139441" /> : {appliance.reparability_index} / 10</Text>
                                                 :
                                                 ""
                                         }
                                     </Text>
-
-                                    <Text style={categoryIdCss.textDescription} numberOfLines={3}>{appliance.description}</Text>
                                 </View>
+
+                                <Text style={categoryIdCss.textDescription} numberOfLines={3}>{appliance.description}</Text>
                             </View>
-                        ))
-                    }
-                </View>
+                        </TouchableOpacity>
+                    ))
+                }
             </ScrollView>
         </View>
     );

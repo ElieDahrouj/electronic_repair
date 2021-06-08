@@ -25,6 +25,7 @@ const CategoryScreen = ({ navigation }) => {
             <Header/>
 
             <Text style={homeCss.title}>Catégorie d'appareils électroniques</Text>
+
             <ScrollView>
                 <View style={categoryCss.scrollView}>
                     {

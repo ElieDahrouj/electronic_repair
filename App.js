@@ -9,6 +9,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import HomeScreen from './screens/Home';
 import CategoryScreen from './screens/Category'
 import CategoryIdScreen from './screens/Category_id'
+import ApplianceIdScreen from './screens/Appliance_id'
 import EshopCategoryScreen from './screens/EshopCategory'
 import EshopCategoryIdScreen from './screens/EshopCategoryId'
 import EshopIdScreen from './screens/Eshop_id'
@@ -27,6 +28,7 @@ function CategoryStackScreen() {
         >
             <Stack.Screen name="Category" component={CategoryScreen} />
             <Stack.Screen name="Category_id" component={CategoryIdScreen} />
+            <Stack.Screen name="Appliance_id" component={ApplianceIdScreen} />
         </Stack.Navigator>
     );
 }
