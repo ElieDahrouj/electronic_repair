@@ -300,8 +300,8 @@ export const eshopIdCss = StyleSheet.create({
     },
 
     textTitle:{
-        fontSize:25,
-        textAlign:'center'
+        fontSize:22,
+        textAlign:'center',
     },
 
     titleArrow:{
@@ -317,19 +317,34 @@ export const eshopIdCss = StyleSheet.create({
 
     price:{
         color:"#0C66FF",
-        fontSize : 25,
+        fontSize : 20,
+    },
+
+    categoryEshopPrice:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
         marginVertical: 10
+    },
+
+    category_eshop:{
+        fontSize : 18,
+        color:secondaryColor
     },
 
     descriptionCss:{
         fontSize: 18,
-        marginBottom:10
+        marginBottom:65
     },
 
     btnAdd:{
         width:Dimensions.get('window').width,
         backgroundColor:mainColor,
         paddingVertical:17,
+        position:'absolute',
+        left: 0,
+        bottom: 0,
+        right:0
     },
 
     txtBtn:{
