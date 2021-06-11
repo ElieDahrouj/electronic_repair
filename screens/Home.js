@@ -1,12 +1,12 @@
 import React from 'react';
-import {Text, View, ScrollView, Image} from 'react-native';
+import {Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
 import Header from '../components/Header';
 import {homeCss, blackColor, whiteSmoke} from '../assets/css/appStyle'
 import {useFetchGet} from '../components/UseFetch';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import LottieView from 'lottie-react-native';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
     const [items, loading ] = useFetchGet("https://api-electronic-repair.herokuapp.com/api/home")
     console.log(items.data)
 
@@ -30,7 +30,11 @@ const HomeScreen = () => {
             <ScrollView>
                 {
                     items.data.map((item) => (
-                        <View key = {item.id} style={[homeCss.viewEachTutorial, item.id %2 ? {backgroundColor:blackColor} : {backgroundColor: whiteSmoke}]}>
+                        <TouchableOpacity key = {item.id} style={[homeCss.viewEachTutorial, item.id %2 ? {backgroundColor:blackColor} : {backgroundColor: whiteSmoke}]} onPress={() => {
+                            navigation.navigate('Tutorial_id', {
+                                tutorial_id: item.id,
+                            })
+                        }}>
 
                             <View style={homeCss.viewPicture}>
                                 <Image style={homeCss.picture} source={{uri:item.image}} />
@@ -60,7 +64,7 @@ const HomeScreen = () => {
                                     </Text>
                                 </View>
                             </View>
-                        </View>
+                        </TouchableOpacity>
                     ))
                 }
             </ScrollView>

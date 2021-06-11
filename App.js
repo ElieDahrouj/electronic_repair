@@ -10,6 +10,7 @@ import HomeScreen from './screens/Home';
 import CategoryScreen from './screens/Category'
 import CategoryIdScreen from './screens/Category_id'
 import ApplianceIdScreen from './screens/Appliance_id'
+import TutorialIdScreen from './screens/Tutorial_id'
 import EshopCategoryScreen from './screens/EshopCategory'
 import EshopCategoryIdScreen from './screens/EshopCategoryId'
 import EshopIdScreen from './screens/Eshop_id'
@@ -18,6 +19,19 @@ import ShoppingCartScreen from './screens/ShoppingCart'
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+
+function HomeStackScreen() {
+    return (
+        <Stack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}
+        >
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Tutorial_id" component={TutorialIdScreen} />
+        </Stack.Navigator>
+    );
+}
 
 function CategoryStackScreen() {
     return (
@@ -29,6 +43,7 @@ function CategoryStackScreen() {
             <Stack.Screen name="Category" component={CategoryScreen} />
             <Stack.Screen name="Category_id" component={CategoryIdScreen} />
             <Stack.Screen name="Appliance_id" component={ApplianceIdScreen} />
+            <Stack.Screen name="Tutorial_id" component={TutorialIdScreen} />
         </Stack.Navigator>
     );
 }
@@ -88,7 +103,7 @@ const App = () => {
                     },
                 }}
             >
-                <Tab.Screen name="Home" component={HomeScreen} />
+                <Tab.Screen name="Home" component={HomeStackScreen} />
                 <Tab.Screen name="Category" component={CategoryStackScreen} />
                 <Tab.Screen name="Shop" component={EshopCategoryStackScreen} />
                 <Tab.Screen name="Basket" component={ShoppingCartScreen} options={{ tabBarBadge: 0 }}  />

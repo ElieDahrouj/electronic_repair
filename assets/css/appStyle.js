@@ -5,6 +5,7 @@ const colorTextInput = "#FFC3A9"
 const mainColor = "#FF8C00"
 const secondaryColor = "#a1a6ac"
 const colorGrayBorder = "#B8BBC6"
+const colorFavory = "#FFD428"
 export const blackColor = "#36383c"
 export const whiteSmoke = "#ffffff"
 
@@ -446,5 +447,26 @@ export const applianceIdCss = StyleSheet.create({
     ViewMoreInformation:{
         paddingLeft:8,
         paddingRight:5
+    }
+})
+
+export const tutorialIdCss = StyleSheet.create({
+    informationAboutTutorial:{
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
+        width: Dimensions.get('window').width/2,
+    },
+
+    ml3:{
+        marginLeft:3
+    },
+
+    ml10:{
+        marginLeft:10
+    },
+
+    favory:{
+        color:colorGrayBorder
     }
 })

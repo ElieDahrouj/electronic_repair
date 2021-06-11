@@ -89,7 +89,11 @@ const ApplianceIdScreen = ({ route, navigation }) => {
 
                 {
                     items.data[0].replacement_tutorial.map((appliance) => (
-                        <TouchableOpacity style={applianceIdCss.replacementTutorialView} key={appliance.id}>
+                        <TouchableOpacity style={applianceIdCss.replacementTutorialView} key={appliance.id} onPress={() => {
+                            navigation.navigate('Tutorial_id', {
+                                tutorial_id: appliance.id,
+                            })
+                        }}>
                             <View>
                                 <Image style={applianceIdCss.imageReplacementTutorial} source={{uri:appliance.image}} />
                             </View>
