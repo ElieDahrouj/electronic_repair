@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
 import {useFetchGetId} from '../components/UseFetch';
-import {categoryIdCss, applianceIdCss} from '../assets/css/appStyle';
+import {categoryIdCss, applianceIdCss, homeCss, blackColor} from '../assets/css/appStyle';
 import LottieView from 'lottie-react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -89,13 +89,35 @@ const ApplianceIdScreen = ({ route, navigation }) => {
 
                 {
                     items.data[0].replacement_tutorial.map((appliance) => (
-                        <TouchableOpacity style={categoryIdCss.viewAppliance} key={appliance.id}>
+                        <TouchableOpacity style={applianceIdCss.replacementTutorialView} key={appliance.id}>
                             <View>
-                                <Image style={categoryIdCss.pictureAppliance} source={{uri:appliance.image}} />
+                                <Image style={applianceIdCss.imageReplacementTutorial} source={{uri:appliance.image}} />
                             </View>
 
-                            <View style={categoryIdCss.viewTextAppliance}>
+                            <View style={[categoryIdCss.viewTextAppliance,applianceIdCss.ViewMoreInformation]}>
                                 <Text style={categoryIdCss.textTitle}>{appliance.name}</Text>
+
+                                <Text style={homeCss.author}><Text style={homeCss.span}>Rédigé par :</Text> {appliance.author} chez {appliance.company}</Text>
+                                <Text style={homeCss.author}><Text style={homeCss.span}>Difficulté :</Text> {appliance.difficulty} </Text>
+                                <Text style={homeCss.author}><Text style={homeCss.span}>Temps nécessaire :</Text> {appliance.necessary_time} </Text>
+
+                                <View style={homeCss.viewMoreInformation}>
+                                    <Text>
+                                        <Text style={{color:blackColor}}>
+                                            { appliance.nb_favorite }
+                                        </Text>
+
+                                        <Ionicons name="star" size={18} color={"#FFD428"} />
+                                    </Text>
+
+                                    <Text>
+                                        <Text style={{color:blackColor}}>
+                                            { appliance.nb_completed_repair }
+                                        </Text>
+
+                                        <Ionicons name="settings-sharp" size={18} color={"#7ED321"} />
+                                    </Text>
+                                </View>
                             </View>
                         </TouchableOpacity>
                     ))
