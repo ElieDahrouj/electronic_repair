@@ -19,7 +19,7 @@ export const useFetchGet = (url) => {
                                     loading:false
                                 })
                             }
-                        }, 1500)
+                        }, 1000)
                     })
             }
             catch(error) {
@@ -52,7 +52,7 @@ export const useFetchGetId = (url,id) => {
                                     loading:false
                                 })
                             }
-                        }, 1500)
+                        }, 1000)
                     })
             }
             catch(error) {

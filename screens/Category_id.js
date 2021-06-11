@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
 import {useFetchGetId} from '../components/UseFetch';
-import {categoryIdCss} from '../assets/css/appStyle';
+import {applianceIdCss, categoryIdCss} from '../assets/css/appStyle';
 import LottieView from 'lottie-react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
@@ -38,13 +38,13 @@ const CategoryIdScreen = ({ route, navigation }) => {
                 }
                 {
                     items.data[0].appliance.map((appliance) => (
-                        <TouchableOpacity style={categoryIdCss.viewAppliance} key={appliance.id} onPress={() => {
+                        <TouchableOpacity style={applianceIdCss.replacementTutorialView} key={appliance.id} onPress={() => {
                             navigation.navigate('Appliance_id', {
                                 appliance_id: appliance.id,
                             })
                         }}>
                             <View>
-                                <Image style={categoryIdCss.pictureAppliance} source={{uri:appliance.picture}} />
+                                <Image style={applianceIdCss.imageReplacementTutorial} source={{uri:appliance.picture}} />
                             </View>
 
                             <View style={categoryIdCss.viewTextAppliance}>

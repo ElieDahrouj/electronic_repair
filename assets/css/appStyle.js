@@ -426,14 +426,14 @@ export const applianceIdCss = StyleSheet.create({
     },
 
     replacementTutorialView:{
-        borderWidth:1,
-        borderColor:"#707070",
+        backgroundColor:whiteSmoke,
         borderRadius:6,
         marginHorizontal: 8,
         marginVertical:15,
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
+        elevation: 2,
     },
 
     imageReplacementTutorial:{
