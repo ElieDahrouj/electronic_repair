@@ -474,12 +474,6 @@ export const tutorialIdCss = StyleSheet.create({
         paddingHorizontal:8
     },
 
-    firstInformation:{
-        marginVertical:10,
-        flexDirection:'row',
-        justifyContent:'space-between'
-    },
-
     mostInformation:{
         width:Dimensions.get('window').width-16,
         flexDirection:'row',
@@ -512,12 +506,26 @@ export const tutorialIdCss = StyleSheet.create({
         marginVertical:33
     },
 
+    mt15:{
+        marginTop:15
+    },
+
     stepCss:{
-        color:colorInfoTutorial,
+        color:"#0d297a",
         fontSize:18
     },
 
     descriptionSize:{
         fontSize:16
+    },
+
+    favoryStyle:{
+        color:whiteSmoke
+    },
+
+    infoToUseTutorial:{
+        color:'#0D717A' ,
+        marginTop:10,
+        fontSize:15
     }
 })

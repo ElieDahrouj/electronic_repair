@@ -51,57 +51,13 @@ const TutorialIdScreen = ({ route, navigation }) => {
                                         <Ionicons style={tutorialIdCss.ml3} name="settings-sharp" size={18} color={"#7ED321"} />
                                     </View>
 
-
                                     <View style={tutorialIdCss.informationAboutTutorial}>
-                                        <Entypo name="documents" size={17} color="#ffffff" />
-
-                                        <Text style={[ applianceIdCss.ml3, applianceIdCss.colorDoc]}>{item.tutorial_step.length} {item.tutorial_step.length > 1 ? "étapes": "étape"}</Text>
+                                        <Text style={tutorialIdCss.favoryStyle}>Favoris <FontAwesome name="star" size={17} color="#FFD428" />: {item.nb_favorite}</Text>
                                     </View>
                                 </View>
                             </View>
 
-                            <View style={tutorialIdCss.ph8}>
-                                <View style={tutorialIdCss.firstInformation}>
-                                    <View>
-                                        <Text>
-                                            {
-                                                item.appliance.reparability_index <= 1.5 && item.appliance.reparability_index != null ?
-                                                    <Text style={[categoryIdCss.danger]}>Réparabilité <FontAwesome name="wrench" size={15} color="#d71528" /> : {item.appliance.reparability_index} / 10</Text>
-                                                    :
-                                                    ""
-                                            }
-                                            {
-                                                item.appliance.reparability_index > 1.5 && item.appliance.reparability_index <= 3 && item.appliance.reparability_index != null ?
-                                                    <Text style={[categoryIdCss.beCareful]}>Réparabilité <FontAwesome name="wrench" size={15} color="#ed7425" /> : {item.appliance.reparability_index} / 10</Text>
-                                                    :
-                                                    ""
-                                            }
-                                            {
-                                                item.appliance.reparability_index > 3 && item.appliance.reparability_index <= 5.5 && item.appliance.reparability_index != null ?
-                                                    <Text style={[categoryIdCss.warning]}>Réparabilité <FontAwesome name="wrench" size={15} color="#fcc816" /> : {item.appliance.reparability_index} / 10</Text>
-                                                    :
-                                                    ""
-                                            }
-                                            {
-                                                item.appliance.reparability_index > 5.5 && item.appliance.reparability_index <= 7 && item.appliance.reparability_index != null ?
-                                                    <Text style={[categoryIdCss.good]}>Réparabilité <FontAwesome name="wrench" size={15} color="#9dc318" /> : {item.appliance.reparability_index} / 10</Text>
-                                                    :
-                                                    ""
-                                            }
-                                            {
-                                                item.appliance.reparability_index > 7 && item.appliance.reparability_index <= 10 && item.appliance.reparability_index != null ?
-                                                    <Text style={[categoryIdCss.veryGood]}>Réparabilité <FontAwesome name="wrench" size={15} color="#139441" /> : {item.appliance.reparability_index} / 10</Text>
-                                                    :
-                                                    ""
-                                            }
-                                        </Text>
-                                    </View>
-
-                                    <View>
-                                        <Text>Favoris <FontAwesome name="star" size={15} color="#FFD428" />: {item.nb_favorite}</Text>
-                                    </View>
-                                </View>
-
+                            <View style={[tutorialIdCss.ph8, tutorialIdCss.mt15]}>
                                 <View style={tutorialIdCss.mostInformation}>
                                     <Text style={tutorialIdCss.textMostInformation}>
                                         <Entypo name="gauge" size={15} color="#98a5af" /> Difficulté
@@ -120,7 +76,7 @@ const TutorialIdScreen = ({ route, navigation }) => {
 
                                 <View style={tutorialIdCss.mostInformation}>
                                     <Text style={tutorialIdCss.textMostInformation}>
-                                        <Ionicons name="list" size={15} color="#98a5af" /> Nombre d'étapes
+                                        <Ionicons name="list" size={15} color="#98a5af" /> Nombre d'{item.tutorial_step.length > 1 ? "étapes": "étape"}
                                     </Text>
 
                                     <Text>{item.tutorial_step.length}</Text>
@@ -133,6 +89,11 @@ const TutorialIdScreen = ({ route, navigation }) => {
 
                                     <Text>{item.appliance.name}</Text>
                                 </View>
+
+
+                                <Text style={tutorialIdCss.infoToUseTutorial}>
+                                    <MaterialCommunityIcons name="information-outline" size={15} color="#0D717A" /> Le demontage se fait en partant du haut vers le bas et le montage inversement !
+                                </Text>
                             </View>
 
                             <View>
