@@ -5,7 +5,7 @@ const colorTextInput = "#FFC3A9"
 const mainColor = "#FF8C00"
 const secondaryColor = "#a1a6ac"
 const colorGrayBorder = "#B8BBC6"
-const colorFavory = "#FFD428"
+const colorInfoTutorial = "#98a5af"
 export const blackColor = "#36383c"
 export const whiteSmoke = "#ffffff"
 
@@ -466,7 +466,54 @@ export const tutorialIdCss = StyleSheet.create({
         marginLeft:10
     },
 
-    favory:{
-        color:colorGrayBorder
+    ph8:{
+        paddingHorizontal:8
+    },
+
+    firstInformation:{
+        marginVertical:10,
+        flexDirection:'row',
+        justifyContent:'space-between'
+    },
+
+    mostInformation:{
+        width:Dimensions.get('window').width-16,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        borderWidth:1,
+        borderColor:colorInfoTutorial,
+        padding:8,
+        marginVertical:5,
+        borderRadius:6
+    },
+
+    textMostInformation:{
+        color:colorInfoTutorial,
+        fontSize:15
+    },
+
+    picture:{
+        height: 310,
+        resizeMode:'contain',
+        borderRadius:borderRadiusSix,
+        width:Dimensions.get('window').width - 16
+    },
+
+    tutorialPictureDescription:{
+        flexDirection:'column'
+    },
+
+    my33:{
+        marginVertical:33
+    },
+
+    stepCss:{
+        color:colorInfoTutorial,
+        fontSize:18
+    },
+
+    descriptionSize:{
+        fontSize:16
     }
 })
