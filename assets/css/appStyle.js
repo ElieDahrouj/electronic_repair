@@ -441,7 +441,11 @@ export const applianceIdCss = StyleSheet.create({
         width : 170,
         height:170,
         borderTopLeftRadius:6,
-        borderBottomLeftRadius:6
+        borderBottomLeftRadius:6,
+    },
+
+    modePicture:{
+        resizeMode:'contain'
     },
 
     ViewMoreInformation:{

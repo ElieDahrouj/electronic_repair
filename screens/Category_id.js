@@ -44,7 +44,7 @@ const CategoryIdScreen = ({ route, navigation }) => {
                             })
                         }}>
                             <View>
-                                <Image style={applianceIdCss.imageReplacementTutorial} source={{uri:appliance.picture}} />
+                                <Image style={[applianceIdCss.imageReplacementTutorial, applianceIdCss.modePicture]} source={{uri:appliance.picture}} />
                             </View>
 
                             <View style={categoryIdCss.viewTextAppliance}>
