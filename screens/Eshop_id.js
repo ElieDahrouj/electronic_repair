@@ -6,7 +6,7 @@ import LottieView from 'lottie-react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {connect} from 'react-redux';
 
-const EshopId = ({ route, navigation, addItemToCart,cartItems}) => {
+const EshopId = ({ route, navigation, addItemToCart}) => {
     const { eshop_id } = route.params;
     const [items, loading ] = useFetchGetId("https://api-electronic-repair.herokuapp.com/api/equipment/",eshop_id)
 
