@@ -15,7 +15,8 @@ import EshopCategoryScreen from './screens/EshopCategory'
 import EshopCategoryIdScreen from './screens/EshopCategoryId'
 import EshopIdScreen from './screens/Eshop_id'
 import ShoppingCartScreen from './screens/ShoppingCart'
-
+import {Provider} from 'react-redux';
+import {store} from './store'
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -72,43 +73,45 @@ const App = () => {
     });
 
     return (
-        <NavigationContainer>
-            <Tab.Navigator
-                screenOptions={({ route }) => ({
-                    tabBarIcon: ({color, size }) => {
-                        let iconName;
-                        if (route.name === 'Home') {
-                            iconName = "home";
-                        }
-                        else if (route.name === 'Category') {
-                            iconName = "albums";
-                        }
-                        else if (route.name === 'Shop') {
-                            iconName = "shop";
-                            return <Entypo name={iconName} size={size} color={color}/>;
-                        }
-                        else if (route.name === 'Basket') {
-                            iconName = "shopping-cart";
-                            return <Entypo name={iconName} size={size} color={color}/>;
-                        }
-                        return <Ionicons name={iconName} size={size} color={color} />;
-                    },
-                })}
-                tabBarOptions={{
-                    activeTintColor: '#FF8C00',
-                    inactiveTintColor: '#707070',
-                    activeBackgroundColor:"#F8F8F8",
-                    labelStyle: {
-                        paddingBottom: 5,
-                    },
-                }}
-            >
-                <Tab.Screen name="Home" component={HomeStackScreen} />
-                <Tab.Screen name="Category" component={CategoryStackScreen} />
-                <Tab.Screen name="Shop" component={EshopCategoryStackScreen} />
-                <Tab.Screen name="Basket" component={ShoppingCartScreen} options={{ tabBarBadge: 0 }}  />
-            </Tab.Navigator>
-        </NavigationContainer>
+        <Provider store={store}>
+            <NavigationContainer>
+                <Tab.Navigator
+                    screenOptions={({ route }) => ({
+                        tabBarIcon: ({color, size }) => {
+                            let iconName;
+                            if (route.name === 'Home') {
+                                iconName = "home";
+                            }
+                            else if (route.name === 'Category') {
+                                iconName = "albums";
+                            }
+                            else if (route.name === 'Shop') {
+                                iconName = "shop";
+                                return <Entypo name={iconName} size={size} color={color}/>;
+                            }
+                            else if (route.name === 'Basket') {
+                                iconName = "shopping-cart";
+                                return <Entypo name={iconName} size={size} color={color}/>;
+                            }
+                            return <Ionicons name={iconName} size={size} color={color} />;
+                        },
+                    })}
+                    tabBarOptions={{
+                        activeTintColor: '#FF8C00',
+                        inactiveTintColor: '#707070',
+                        activeBackgroundColor:"#F8F8F8",
+                        labelStyle: {
+                            paddingBottom: 5,
+                        },
+                    }}
+                >
+                    <Tab.Screen name="Home" component={HomeStackScreen} />
+                    <Tab.Screen name="Category" component={CategoryStackScreen} />
+                    <Tab.Screen name="Shop" component={EshopCategoryStackScreen} />
+                    <Tab.Screen name="Basket" component={ShoppingCartScreen} options={{ tabBarBadge: 0 }}  />
+                </Tab.Navigator>
+            </NavigationContainer>
+        </Provider>
     )
 }
 export default App;

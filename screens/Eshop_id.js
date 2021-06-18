@@ -1,15 +1,14 @@
-import React, {useState} from 'react';
-import {Text, View, ScrollView, Image, TouchableOpacity, Animated} from 'react-native';
+import React from 'react';
+import {Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
 import {useFetchGetId} from '../components/UseFetch';
 import {categoryIdCss, eshopIdCss} from '../assets/css/appStyle';
 import LottieView from 'lottie-react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {connect} from 'react-redux';
 
-const EshopId = ({ route, navigation }) => {
+const EshopId = ({ route, navigation, addItemToCart,cartItems}) => {
     const { eshop_id } = route.params;
     const [items, loading ] = useFetchGetId("https://api-electronic-repair.herokuapp.com/api/equipment/",eshop_id)
-    const [scrollY, setScrollY] = useState(new Animated.Value(0))
-    console.log(items)
 
     if (loading){
         return(
@@ -52,10 +51,17 @@ const EshopId = ({ route, navigation }) => {
                 }
             </ScrollView>
 
-            <TouchableOpacity activeOpacity={0.6} style={eshopIdCss.btnAdd} onPress={() => console.log('Simple Button pressed')}>
+            <TouchableOpacity activeOpacity={0.6} style={eshopIdCss.btnAdd} onPress={() => addItemToCart(items.data[0])}>
                 <Text style={eshopIdCss.txtBtn}>Ajouter au panier</Text>
             </TouchableOpacity>
         </View>
     );
 };
-export default EshopId;
+
+const mapDispatchToProps =  (dispatch) =>{
+    return {
+        addItemToCart:(product) => dispatch({type:'ADD_TO_CART',payload:product})
+    }
+}
+
+export default connect(null, mapDispatchToProps)(EshopId);

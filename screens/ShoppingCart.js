@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Text, View, ScrollView, Image} from 'react-native';
 import Header from '../components/Header';
-import {categoryCss, homeCss, shoppingCartCss} from '../assets/css/appStyle';
+import {categoryCss, shoppingCartCss} from '../assets/css/appStyle';
 import emptyCart from "../assets/pictures/emptyCart.png"
-const ShoppingCartScreen = () => {
+import {connect} from 'react-redux';
+
+const ShoppingCartScreen = ({cartItems, navigation}) => {
+    useEffect(() =>{
+        navigation.setOptions({
+            tabBarBadge: cartItems.length
+        })
+    },[cartItems,navigation])
 
     return (
         <View style={categoryCss.categoryView}>
@@ -22,4 +29,10 @@ const ShoppingCartScreen = () => {
     );
 };
 
-export default ShoppingCartScreen;
+const mapStateToProps = (state) =>{
+    return {
+        cartItems: state,
+    }
+}
+
+export default connect(mapStateToProps,null)(ShoppingCartScreen);
