@@ -5,13 +5,7 @@ import {categoryCss, shoppingCartCss} from '../assets/css/appStyle';
 import emptyCart from "../assets/pictures/emptyCart.png"
 import {connect} from 'react-redux';
 
-const ShoppingCartScreen = ({cartItems, navigation}) => {
-    useEffect(() =>{
-        navigation.setOptions({
-            tabBarBadge: cartItems.length
-        })
-    },[cartItems,navigation])
-
+const ShoppingCartScreen = () => {
     return (
         <View style={categoryCss.categoryView}>
             <Header/>
