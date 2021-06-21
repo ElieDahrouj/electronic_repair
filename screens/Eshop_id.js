@@ -6,7 +6,7 @@ import LottieView from 'lottie-react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {connect} from 'react-redux';
 
-const EshopId = ({ route, navigation, addItemToCart}) => {
+const EshopId = ({ route, navigation, addItemToCart, incrementPrice}) => {
     const { eshop_id } = route.params;
     const [items, loading ] = useFetchGetId("https://api-electronic-repair.herokuapp.com/api/equipment/",eshop_id)
 
@@ -51,7 +51,7 @@ const EshopId = ({ route, navigation, addItemToCart}) => {
                 }
             </ScrollView>
 
-            <TouchableOpacity activeOpacity={0.8} style={eshopIdCss.btnAdd} onPress={() => addItemToCart(items.data[0])}>
+            <TouchableOpacity activeOpacity={0.8} style={eshopIdCss.btnAdd} onPress={() => [addItemToCart(items.data[0]),incrementPrice(items.data[0].price)]}>
                 <Text style={eshopIdCss.txtBtn}>Ajouter au panier</Text>
             </TouchableOpacity>
         </View>
@@ -60,7 +60,8 @@ const EshopId = ({ route, navigation, addItemToCart}) => {
 
 const mapDispatchToProps =  (dispatch) =>{
     return {
-        addItemToCart:(product) => dispatch({type:'ADD_TO_CART',payload:product})
+        addItemToCart:(product) => dispatch({type:'ADD_TO_CART',payload:product}),
+        incrementPrice:(product) => dispatch({type:'INCREMENT', payload:product})
     }
 }
 

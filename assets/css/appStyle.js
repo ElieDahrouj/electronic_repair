@@ -156,7 +156,8 @@ export const shoppingCartCss = StyleSheet.create({
     scrollViewCCC:{
         flexDirection:"column",
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        marginBottom:100
     },
     firstTxt:{
         marginVertical: 10,
@@ -167,8 +168,57 @@ export const shoppingCartCss = StyleSheet.create({
         color:blackColor,
         fontSize:15,
     },
-    mb:{
-        marginTop:30
+
+    replacementTutorialView:{
+        backgroundColor:whiteSmoke,
+        borderRadius:6,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+    },
+
+    deleteBox:{
+        width:65,
+        height:100,
+        backgroundColor:'#b11818',
+        borderRadius:borderRadiusSix,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
+    },
+
+    textTitle:{
+        fontWeight:'bold',
+        fontSize:15
+    },
+
+    containerAction:{
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between',
+        width:Dimensions.get('window').width,
+        paddingHorizontal:8,
+        marginBottom:25
+    },
+
+    imageReplacementTutorial:{
+        width : 100,
+        height:100,
+        borderTopLeftRadius:6,
+        borderBottomLeftRadius:6,
+        resizeMode:'contain'
+    },
+
+    displayPrice:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 8,
+        position: 'absolute',
+        bottom: 50,
+        width: Dimensions.get('window').width,
+        backgroundColor: '#ffffff',
+        paddingVertical: 10
     }
 })
 
