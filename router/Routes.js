@@ -12,6 +12,7 @@ import ApplianceIdScreen from '../screens/Appliance_id'
 import TutorialIdScreen from '../screens/Tutorial_id'
 import EshopCategoryScreen from '../screens/EshopCategory'
 import EshopCategoryIdScreen from '../screens/EshopCategoryId'
+import FormToPurchaseScreen from "../screens/FormToPurchase"
 import EshopIdScreen from '../screens/Eshop_id'
 import ShoppingCartScreen from '../screens/ShoppingCart'
 import {connect} from 'react-redux';
@@ -61,6 +62,19 @@ function EshopCategoryStackScreen() {
     );
 }
 
+function ShoppingCartStackScreen() {
+    return (
+        <Stack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}
+        >
+            <Stack.Screen name="Basket" component={ShoppingCartScreen} />
+            <Stack.Screen name="FormToPurchase" component={FormToPurchaseScreen} />
+        </Stack.Navigator>
+    );
+}
+
 
 const Routes = ({cartItems}) => {
 
@@ -101,9 +115,9 @@ const Routes = ({cartItems}) => {
                 <Tab.Screen name="Shop" component={EshopCategoryStackScreen} />
                 {
                     cartItems.length > 0 ?
-                        <Tab.Screen name="Basket" component={ShoppingCartScreen} options={{ tabBarBadge: cartItems.length}}  />
+                        <Tab.Screen name="Basket" component={ShoppingCartStackScreen} options={{ tabBarBadge: cartItems.length}}  />
                         :
-                        <Tab.Screen name="Basket" component={ShoppingCartScreen} />
+                        <Tab.Screen name="Basket" component={ShoppingCartStackScreen} />
                 }
             </Tab.Navigator>
         </NavigationContainer>

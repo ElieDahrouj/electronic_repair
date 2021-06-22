@@ -12,7 +12,7 @@ import emptyCart from "../assets/pictures/emptyCart.png"
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {connect} from 'react-redux';
 
-const ShoppingCartScreen = ({cartItems, removeItem,totalPrice}) => {
+const ShoppingCartScreen = ({cartItems, removeItem,totalPrice, navigation}) => {
     console.log(cartItems)
 
     return (
@@ -70,7 +70,7 @@ const ShoppingCartScreen = ({cartItems, removeItem,totalPrice}) => {
             }
 
             {cartItems.length !== 0 ?
-                <TouchableOpacity activeOpacity={0.8} style={[eshopIdCss.btnAdd]} onPress={() => console.log('test')}>
+                <TouchableOpacity activeOpacity={0.8} style={[eshopIdCss.btnAdd]} onPress={() => {navigation.navigate('FormToPurchase')}}>
                     <Text style={eshopIdCss.txtBtn}>Finalisez la commande </Text>
                 </TouchableOpacity>
                 : null

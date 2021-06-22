@@ -579,3 +579,84 @@ export const tutorialIdCss = StyleSheet.create({
         fontSize:15
     }
 })
+
+export const formToPurchaseCss = StyleSheet.create({
+    purchaseView:{
+        flex:1,
+        paddingHorizontal:8,
+        paddingTop:8
+    },
+
+    title:{
+        fontSize: 20,
+        fontWeight: "bold",
+        marginTop: 10,
+        textAlign:'center',
+        marginBottom:10,
+    },
+    cb:{
+        marginTop:100,
+        width:Dimensions.get('window').width-22,
+    },
+
+    viewInput:{
+        width:Dimensions.get('window').width-22,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between',
+        marginBottom:15,
+        margin:'auto'
+    },
+
+    txtInput:{
+        borderWidth:1,
+        borderColor:colorTextInput,
+        borderRadius:borderRadiusSix,
+        paddingHorizontal:5,
+        width:170
+    },
+
+    txtAddressEmail:{
+        marginBottom:15,
+        borderWidth:1,
+        borderColor:colorTextInput,
+        borderRadius:borderRadiusSix,
+        paddingHorizontal:5,
+        width:Dimensions.get('window').width-22,
+    },
+
+    creditCard:{
+        borderBottomWidth:1,
+        borderBottomColor:colorTextInput,
+        marginTop:5
+    },
+
+    viewInformation:{
+        flexDirection:'column',
+        justifyContent:'center'
+    },
+
+    mb15:{
+        marginBottom:25,
+    },
+
+    btnNotValid:{
+        width:Dimensions.get('window').width,
+        backgroundColor:"rgb(239,178,123)",
+        paddingVertical:17,
+        position:'absolute',
+        left: 0,
+        bottom: 0,
+        right:0
+    },
+
+    btnValid:{
+        width:Dimensions.get('window').width,
+        backgroundColor:mainColor,
+        paddingVertical:17,
+        position:'absolute',
+        left: 0,
+        bottom: 0,
+        right:0
+    },
+})
