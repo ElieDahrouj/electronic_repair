@@ -13,7 +13,6 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {connect} from 'react-redux';
 
 const ShoppingCartScreen = ({cartItems, removeItem,totalPrice, navigation}) => {
-    console.log(cartItems)
 
     return (
         <View style={categoryCss.categoryView}>
@@ -42,12 +41,12 @@ const ShoppingCartScreen = ({cartItems, removeItem,totalPrice, navigation}) => {
                                                    source={{uri: item.picture}}/>
                                         </View>
 
-                                        <View style={categoryIdCss.viewTextAppliance}>
+                                        <View style={shoppingCartCss.viewTextAppliance}>
                                             <Text style={shoppingCartCss.textTitle}>{item.name}</Text>
 
                                             <View style={categoryIdCss.my}>
-                                                <Text style={eshopCategoryIdCss.textPrice}>{item.price} €</Text>
                                                 <Text style={eshopCategoryIdCss.textPrice}>Quantité: 1</Text>
+                                                <Text style={eshopCategoryIdCss.textPrice}>{item.price} €</Text>
                                             </View>
                                         </View>
                                     </View>

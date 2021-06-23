@@ -24,7 +24,7 @@ const FormToPurchaseScreen = ({ navigation }) => {
    // console.log("test "+JSON.stringify(formData.creditCart.valid))
     return (
         <View style={formToPurchaseCss.purchaseView}>
-            <ScrollView style={formToPurchaseCss.mb15}>
+            <ScrollView style={formToPurchaseCss.mb25}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <Ionicons name="arrow-back" size={30} color="#FF8C00" />
                 </TouchableOpacity>
@@ -120,7 +120,9 @@ const FormToPurchaseScreen = ({ navigation }) => {
                         <Text style={eshopIdCss.txtBtn}>Validez les informations</Text>
                     </Pressable>
                     :
-                    <TouchableOpacity activeOpacity={0.8} style={[eshopIdCss.btnAdd]} onPress={() => console.log('hel')}>
+                    <TouchableOpacity activeOpacity={0.8} style={[formToPurchaseCss.btnValid]} onPress={() => {
+                        navigation.navigate('RecapOrder', { information: formData,})
+                    }}>
                         <Text style={eshopIdCss.txtBtn}>Validez les informations</Text>
                     </TouchableOpacity>
             }

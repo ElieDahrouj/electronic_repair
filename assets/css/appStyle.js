@@ -169,6 +169,10 @@ export const shoppingCartCss = StyleSheet.create({
         fontSize:15,
     },
 
+    viewTextAppliance:{
+        width: Dimensions.get('window').width - 185,
+    },
+
     replacementTutorialView:{
         backgroundColor:whiteSmoke,
         borderRadius:6,
@@ -178,7 +182,7 @@ export const shoppingCartCss = StyleSheet.create({
     },
 
     deleteBox:{
-        width:65,
+        width:60,
         height:100,
         backgroundColor:'#b11818',
         borderRadius:borderRadiusSix,
@@ -202,7 +206,7 @@ export const shoppingCartCss = StyleSheet.create({
     },
 
     imageReplacementTutorial:{
-        width : 100,
+        width: 100,
         height:100,
         borderTopLeftRadius:6,
         borderBottomLeftRadius:6,
@@ -636,7 +640,7 @@ export const formToPurchaseCss = StyleSheet.create({
         justifyContent:'center'
     },
 
-    mb15:{
+    mb25:{
         marginBottom:25,
     },
 
@@ -658,5 +662,37 @@ export const formToPurchaseCss = StyleSheet.create({
         left: 0,
         bottom: 0,
         right:0
+    },
+})
+
+export const recapOrderCss = StyleSheet.create({
+    viewOrder:{
+        flexDirection:'column',
+        justifyContent:'center',
+        width:Dimensions.get('window').width - 16
+    },
+
+    viewCard:{
+        flexDirection:'column',
+        alignItems:'center',
+        justifyContent:'center',
+        width:Dimensions.get('window').width - 16,
+        marginVertical:10
+    },
+
+    card:{
+        width:Dimensions.get('window').width - 155
+    },
+
+    fs16:{
+        fontSize:18
+    },
+
+    txtCenter:{
+        textAlign:'center'
+    },
+
+    mb70:{
+        marginBottom:115,
     },
 })
