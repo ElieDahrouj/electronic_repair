@@ -7,7 +7,7 @@ import LottieView from 'lottie-react-native';
 
 const CategoryScreen = ({ navigation }) => {
     const [items, loading ] = useFetchGet("https://api-electronic-repair.herokuapp.com/api/category")
-    console.log(items.data)
+
 
     if (loading){
         return(

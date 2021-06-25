@@ -7,7 +7,6 @@ import LottieView from 'lottie-react-native';
 
 const EshopCategoryScreen = ({ navigation }) => {
     const [items, loading ] = useFetchGet("https://api-electronic-repair.herokuapp.com/api/eshop")
-    console.log(items.data)
 
     if (loading){
         return(

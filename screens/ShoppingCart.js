@@ -12,7 +12,7 @@ import emptyCart from "../assets/pictures/emptyCart.png"
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {connect} from 'react-redux';
 
-const ShoppingCartScreen = ({cartItems, removeItem,totalPrice, navigation}) => {
+const ShoppingCartScreen = ({cartItems, removeItem,totalPrice, navigation,decrementPrice}) => {
 
     return (
         <View style={categoryCss.categoryView}>
@@ -51,7 +51,7 @@ const ShoppingCartScreen = ({cartItems, removeItem,totalPrice, navigation}) => {
                                         </View>
                                     </View>
 
-                                    <TouchableHighlight style={shoppingCartCss.deleteBox} underlayColor={"#E76D6D"} onPress={() => removeItem(index)}>
+                                    <TouchableHighlight style={shoppingCartCss.deleteBox} underlayColor={"#E76D6D"} onPress={() =>[removeItem(index),decrementPrice(item.price)]}>
                                         <FontAwesome5 name="trash-alt" size={25} color="#ffffff"/>
                                     </TouchableHighlight>
                                 </View>
@@ -87,7 +87,8 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps =  (dispatch) =>{
     return {
-        removeItem:(product) => dispatch({type:'REMOVE_FROM_CART',payload:product})
+        removeItem:(product) => dispatch({type:'REMOVE_FROM_CART',payload:product}),
+        decrementPrice:(product) => dispatch({type:'DECREMENT', payload:product})
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(ShoppingCartScreen);

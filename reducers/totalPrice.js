@@ -4,7 +4,7 @@ const totalPrice = (state= 0, action) =>{
         case 'INCREMENT':
             return Math.round((state += parseFloat(action.payload)) * 100)/100
         case 'DECREMENT':
-            return state -= action.payload.price
+            return Math.round((state -= parseFloat(action.payload)) * 100)/100
     }
     return state
 }
