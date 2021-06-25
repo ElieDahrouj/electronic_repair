@@ -13,7 +13,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {connect} from 'react-redux';
 
 const ShoppingCartScreen = ({cartItems, removeItem,totalPrice, navigation,decrementPrice}) => {
-
+    console.log(cartItems)
     return (
         <View style={categoryCss.categoryView}>
             <Header/>
@@ -38,20 +38,20 @@ const ShoppingCartScreen = ({cartItems, removeItem,totalPrice, navigation,decrem
                                     <View style={[shoppingCartCss.replacementTutorialView]}>
                                         <View>
                                             <Image style={shoppingCartCss.imageReplacementTutorial}
-                                                   source={{uri: item.picture}}/>
+                                                   source={{uri: item.cart.picture}}/>
                                         </View>
 
                                         <View style={shoppingCartCss.viewTextAppliance}>
-                                            <Text style={shoppingCartCss.textTitle}>{item.name}</Text>
+                                            <Text style={shoppingCartCss.textTitle}>{item.cart.name}</Text>
 
                                             <View style={categoryIdCss.my}>
                                                 <Text style={eshopCategoryIdCss.textPrice}>Quantité: 1</Text>
-                                                <Text style={eshopCategoryIdCss.textPrice}>{item.price} €</Text>
+                                                <Text style={eshopCategoryIdCss.textPrice}>{item.cart.price} €</Text>
                                             </View>
                                         </View>
                                     </View>
 
-                                    <TouchableHighlight style={shoppingCartCss.deleteBox} underlayColor={"#E76D6D"} onPress={() =>[removeItem(index),decrementPrice(item.price)]}>
+                                    <TouchableHighlight style={shoppingCartCss.deleteBox} underlayColor={"#E76D6D"} onPress={() =>[removeItem(item.uid),decrementPrice(item.cart.price)]}>
                                         <FontAwesome5 name="trash-alt" size={25} color="#ffffff"/>
                                     </TouchableHighlight>
                                 </View>

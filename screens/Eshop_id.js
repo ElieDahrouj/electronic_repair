@@ -51,7 +51,10 @@ const EshopId = ({ route, navigation, addItemToCart, incrementPrice}) => {
                 }
             </ScrollView>
 
-            <TouchableOpacity activeOpacity={0.8} style={eshopIdCss.btnAdd} onPress={() => [addItemToCart(items.data[0]),incrementPrice(items.data[0].price)]}>
+            <TouchableOpacity activeOpacity={0.8} style={eshopIdCss.btnAdd} onPress={() => [addItemToCart({
+                cart:items.data[0],
+                uid:Math.floor(Math.random() * 100)
+            }),incrementPrice(items.data[0].price)]}>
                 <Text style={eshopIdCss.txtBtn}>Ajouter au panier</Text>
             </TouchableOpacity>
         </View>
