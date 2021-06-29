@@ -30,16 +30,15 @@ const RecapOrder = ({cartItems,totalPrice, navigation,route}) => {
                             <View key={index} style={recapOrderCss.viewCard} >
                                 <View style={[shoppingCartCss.replacementTutorialView]}>
                                     <View>
-                                        <Image style={shoppingCartCss.imageReplacementTutorial}
-                                               source={{uri: item.picture}}/>
+                                        <Image style={shoppingCartCss.imageReplacementTutorial} source={{uri: item.cart.picture}}/>
                                     </View>
 
                                     <View style={recapOrderCss.card}>
-                                        <Text style={shoppingCartCss.textTitle}>{item.name}</Text>
+                                        <Text style={shoppingCartCss.textTitle}>{item.cart.name}</Text>
 
                                         <View style={categoryIdCss.my}>
                                             <Text style={eshopCategoryIdCss.textPrice}>Quantité: 1</Text>
-                                            <Text style={eshopCategoryIdCss.textPrice}>{item.price} €</Text>
+                                            <Text style={eshopCategoryIdCss.textPrice}>{item.cart.price} €</Text>
                                         </View>
                                     </View>
                                 </View>
