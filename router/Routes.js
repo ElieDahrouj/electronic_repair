@@ -14,6 +14,7 @@ import EshopCategoryScreen from '../screens/EshopCategory'
 import EshopCategoryIdScreen from '../screens/EshopCategoryId'
 import FormToPurchaseScreen from "../screens/FormToPurchase"
 import RecapOrderScreen from "../screens/RecapOrder"
+import ConfirmOrderScreen from "../screens/ConfirmOrder"
 import EshopIdScreen from '../screens/Eshop_id'
 import ShoppingCartScreen from '../screens/ShoppingCart'
 import {connect} from 'react-redux';
@@ -73,6 +74,7 @@ function ShoppingCartStackScreen() {
             <Stack.Screen name="Basket" component={ShoppingCartScreen} />
             <Stack.Screen name="FormToPurchase" component={FormToPurchaseScreen} />
             <Stack.Screen name="RecapOrder" component={RecapOrderScreen} />
+            <Stack.Screen name="ConfirmOrder" component={ConfirmOrderScreen} />
         </Stack.Navigator>
     );
 }

@@ -696,3 +696,22 @@ export const recapOrderCss = StyleSheet.create({
         marginBottom:115,
     },
 })
+
+export const confirmOderCss = StyleSheet.create({
+    firstTxt:{
+        width:Dimensions.get('window').width,
+        fontSize:15,
+        textAlign:'center'
+    },
+
+    flex:{
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center',
+        height: Dimensions.get('window').height -200,
+    },
+
+    viewTxt:{
+        paddingTop:20
+    }
+})

@@ -67,7 +67,7 @@ const RecapOrder = ({cartItems,totalPrice, navigation,route}) => {
                 : null
             }
 
-            <TouchableOpacity activeOpacity={0.8} style={[formToPurchaseCss.btnValid]} onPress={() =>console.log('hehe')}>
+            <TouchableOpacity activeOpacity={0.8} style={[formToPurchaseCss.btnValid]} onPress={() => navigation.navigate('ConfirmOrder')}>
                 <Text style={eshopIdCss.txtBtn}>Validez la commande et payez</Text>
             </TouchableOpacity>
         </View>
